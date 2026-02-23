@@ -1,20 +1,23 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🚀 Project Title (e.g., Autonomous Turntable Scanner)
+> A brief 1-sentence description of what this project does.
 
-# Run and deploy your AI Studio app
+## 👥 The Team
+* **Name 1** (@username) - Lead Developer / Computer Vision
+* **Name 2** (@username) - Frontend / UI
+* **Name 3** (@username) - Documentation / Hardware Integration
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/drive/1YKLiHD0w7UvdJ9KmJ6QazRD_QCF7OVaj
+## 🛠️ Tech Stack
+* **Language:** Python 3.10+
+* **Frontend:** React + Vite (located in `/frontend`)
+* **Libraries:** OpenCV, NumPy, Open3D (if applicable)
+* **Collaboration:** Git + Discord Webhooks
 
-## Run Locally
+## ⚙️ Installation & Setup
+Follow these steps to get the project running on your local machine.
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 1. Clone the Repo
+```bash
+git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+cd your-repo-name
