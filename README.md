@@ -34,20 +34,20 @@ python -m venv venv
 # Install dependencies
 pip install -r requirements.txt
 ```
-###3. Frontend Setup (if applicable)
+### 3. Frontend Setup (if applicable)
 ```Bash
 cd frontend
 npm install
 npm run dev
 ```
 
-##📂 Project Structure
+## 📂 Project Structure
 * **/backend** - Python logic and API
 * **/frontend** - React/Vite source code
 * **/data** - Sample point clouds or test images
 * **main.py** - Entry point for the application
 
-##🤝 How to Contribute
+## 🤝 How to Contribute
 1. Always git pull before starting work.
 2. Create a feature branch: git checkout -b feature/name-of-feature.
 3. Open a Pull Request on GitHub for review before merging to main.
