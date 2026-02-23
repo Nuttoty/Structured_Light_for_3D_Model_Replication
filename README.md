@@ -54,6 +54,6 @@ npm run dev
 
 ## Credits & Attribution
 This project incorporates core 3D scanning algorithms adapted from:
-* Project: Structured Light for 3D Scanning
-* Author: Douglas Lanman (Brown University)
-* Contribution: The Gray code generation and ray-plane triangulation logic in /core/scanner.py is a Python port of the original Matlab implementation by Lanman.
+* **Project**: Structured Light for 3D Scanning
+* **Author**: Douglas Lanman (Brown University)
+* **Contribution**: The Gray code generation and ray-plane triangulation logic in /core/scanner.py is a Python port of the original Matlab implementation by Lanman.
