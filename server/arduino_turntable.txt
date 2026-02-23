@@ -1,0 +1,75 @@
+/*
+ * ESP32 Stepper Motor Turntable Control
+ * 
+ * Hardware:
+ * - ESP32 Dev Module
+ * - A4988 Stepper Driver (or similar)
+ * - NEMA 17 Stepper Motor
+ * 
+ * Connections:
+ * - DIR_PIN: GPIO 4
+ * - STEP_PIN: GPIO 5
+ * - EN_PIN:  GPIO 18 (Optional)
+ * 
+ * Commands (Serial 115200 baud):
+ * - Send a number (e.g., "30") to rotate that many degrees.
+ * - Responds with "DONE" when movement is finished.
+ */
+
+#define DIR_PIN 4
+#define STEP_PIN 5
+#define EN_PIN 18
+
+// Motor steps per revolution (checking your motor spec, usually 200)
+// If you use microstepping, adjust this.
+// e.g. 1/16 microstepping -> 200 * 16 = 3200 steps/rev
+#define STEPS_PER_REV 3200 
+
+// Speed settings
+#define STEP_DELAY_MICROS 500 // Lower is faster
+
+void setup() {
+  Serial.begin(115200);
+  
+  pinMode(DIR_PIN, OUTPUT);
+  pinMode(STEP_PIN, OUTPUT);
+  pinMode(EN_PIN, OUTPUT);
+  
+  digitalWrite(EN_PIN, LOW); // Enable driver (Active LOW usually)
+  
+  Serial.println("READY");
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    String input = Serial.readStringUntil('\n');
+    input.trim();
+    
+    if (input.length() > 0) {
+      float degrees = input.toFloat();
+      rotate(degrees);
+      Serial.println("DONE");
+    }
+  }
+}
+
+void rotate(float deg) {
+  // Calculate steps
+  long steps_to_move = (long)((deg / 360.0) * STEPS_PER_REV);
+  
+  // Direction
+  if (steps_to_move > 0) {
+    digitalWrite(DIR_PIN, HIGH);
+  } else {
+    digitalWrite(DIR_PIN, LOW);
+    steps_to_move = -steps_to_move;
+  }
+  
+  // Move
+  for (long i = 0; i < steps_to_move; i++) {
+    digitalWrite(STEP_PIN, HIGH);
+    delayMicroseconds(STEP_DELAY_MICROS);
+    digitalWrite(STEP_PIN, LOW);
+    delayMicroseconds(STEP_DELAY_MICROS);
+  }
+}

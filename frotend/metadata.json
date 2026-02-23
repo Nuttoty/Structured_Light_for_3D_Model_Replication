@@ -1,0 +1,7 @@
+{
+  "name": "Gemini Structured Light Scanner",
+  "description": "Remote camera capture client for Structured Light Scanning, designed to run on Android via USB Tethering.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
