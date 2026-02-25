@@ -84,7 +84,7 @@ def full_registration(pcds, max_correspondence_distance_coarse, max_corresponden
     return pcds
 
 def main():
-    voxel_size = 0.02 # Adjust based on your object scale (e.g. 0.02 meters)
+    voxel_size = 3 # Adjust based on your object scale (e.g. 0.02 meters)
     
     # 1. Load Data
     pcds = load_point_clouds(voxel_size)
